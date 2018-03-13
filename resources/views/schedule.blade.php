@@ -73,7 +73,6 @@
                                 <div class="card mb-4">
                                     <div class="card-block">
                                         <h3 class="card-title">Overview</h3>
-                                        
                                         <div class="dropdown card-title-btn-container">
                                             <button class="btn btn-sm btn-subtle" type="button"><em class="fa fa-list-ul"></em> View All</button>
                                             

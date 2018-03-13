@@ -6,7 +6,12 @@
                     <div class="panel-heading">Example Component</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                        <ul>
+                            <li v-for="name in names" v-text="name"></li>
+                        </ul>
+
+                        <input type="text" v-model="newName">
+                        <button v-on:click="addName">Add Name</button>
                     </div>
                 </div>
             </div>
@@ -16,8 +21,19 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+    data() {
+        return {
+
+            newName: '',
+
+            names: ['Joe', 'Mary']
+        }
+    },
+
+    methods: {
+        addName() {
+            this.names.push(this.newName);
         }
     }
+}
 </script>

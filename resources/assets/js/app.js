@@ -1,5 +1,3 @@
-import Vue from 'vue'
-import Sortable from 'vue-sortable'
 /**
  * JavaScript dependencies
  */
@@ -7,7 +5,6 @@ require('./bootstrap');
 require('./gmap');
 
 window.Vue = require('vue'); 
-Vue.use(Sortable);
 
 /**
  * Vanilla JS Initializations
@@ -25,7 +22,7 @@ $("#wrapper").toggleClass("toggled");
  */
 
 Vue.component('deployment-table', require('./components/deployment-table.vue'));
-
+Vue.component('test', require('./components/test.vue'));
 const app = new Vue({
-    el: '#app'
+    el: '#app',
 });

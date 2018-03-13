@@ -13,21 +13,21 @@
         </thead>
 
         <tbody>
-        <tr v-for="(row, index) in rows" v-bind:key="row._id">
-            <td class="table__cell table__element center-content align-middle">{{ index +1 }}</td>
+        <tr v-for="(row, index) in rows">
+            <td class="table__cell table__element center-content align-middle">{{ index }}</td>
 
             <td class="align-middle">
-                <label for="location-name" class="sr-only">Location Name</label>
+                <label class="sr-only">Location Name</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon"><em class="fa fa-map-marker"></em></div>
-                    <input class="table__input form-control" placeholder="Search Location" name="location-name" type="text" v-model="row.location">
+                    <input class="table__input form-control" placeholder="Search Location" :name="`name-${index}`" type="text" v-model="row.name">
                 </div>
             </td>
 
             <td class="align-middle">
-                <label for="package-weight" class="sr-only">Package Weight</label>
+                <label class="sr-only">Package Weight</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <input class="table__input form-control" placeholder="Package Weight" name="package-weight" type="text" v-model.number="row.weight">
+                    <input id="weight" class="table__input form-control" placeholder="Package Weight" :name="`weight-${index}`" type="text" v-model.number="row.weight">
                     <div class="input-group-addon">kg</div>
                 </div>
             </td>
@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <td class="text-right" colspan="4">
-                <button type="button" class="table__element create-row btn btn-link" @click="addRow(index)">
+                <button type="button" class="table__element create-row btn btn-link" @click="addRow()">
                     <em class="fa fa-plus"></em>
                 </button>
             </td>
@@ -90,12 +90,12 @@ $font-medium: 1.2rem;
 export default {
     data() {
         return {
-            index: '',
             rows: [
-                //initial data
-                { weight: '', location: ''},
-                { weight: '', location: ''},
-            ],
+                {
+                name: '',
+                weight: ''
+                }
+            ]
         }
     },
     methods: {
@@ -107,28 +107,17 @@ export default {
                 return true;
             }
         },
-        addRow(index){
-            try {
-                this.rows.splice(index + 1, 0, {});
-            } catch(e)
-            {
-                console.log(e);
-            }
+        addRow(){
+
+            this.rows.push({
+                name: '',
+                weight: ''
+            })
+
         },
         removeRow(index) {
-            console.log(this.rows.length);
             this.rows.splice(index, 1);
         },
-        getData() {
-            $.ajax({
-                context: this,
-                type: "POST",
-                data: {
-                    rows: this.rows,
-                },
-                url: "/api/data"
-            });
-        }
     }
 }
 </script>
