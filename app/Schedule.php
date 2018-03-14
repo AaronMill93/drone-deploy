@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     public $drone; //drone object
-    private $locations = array(); //array of location objects
-    private $trips = array(); //array of trip objects
+    public $locations = array(); //array of location objects
+    public $trips = array(); //array of trip objects
 
     public function __construct($drone)
     {
@@ -18,7 +18,7 @@ class Schedule extends Model
     public function addLocation($location)
     {
         //Add new location to end of $locations
-        array_push($this->locations,$location);
+        array_push($this->locations, $location);
     }
 
     public function addTrip($trip)
@@ -37,12 +37,9 @@ class Schedule extends Model
      */
     public function createTrips($locations, $weightLimit)
     {
-        $locations = $this->locations;
-        $drone = $this->drone;
-        $weightLimit = $drone->maxWeight;
         $i = 0;
         $trip = new Trip();
-        usort($this->locations, array($this,"compareLocationsByPackageWeight"));
+        usort($locations, array($this,"compareLocationsByPackageWeight"));
         if (empty($locations)) {
             return 1;
         }
@@ -56,7 +53,6 @@ class Schedule extends Model
             }
         }
         else {
-    
             do {
     
                 $arrayValue = array_pop($locations);
@@ -66,11 +62,8 @@ class Schedule extends Model
     
             } while (($i + end($locations)->packageWeight) <= $weightLimit);
         }
-    
-        echo "POINTER: ". $i." LIST: ";
-        print_r($trip);
-        addTrip($trip);
-        createTrips($locations, $weightLimit);
+        $this->addTrip($trip);
+        $this->createTrips($locations, $weightLimit);
     }
 }
 

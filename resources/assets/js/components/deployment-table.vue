@@ -14,7 +14,7 @@
 
         <tbody>
         <tr v-for="(row, index) in rows">
-            <td class="table__cell table__element center-content align-middle">{{ index }}</td>
+            <td class="table__cell table__element center-content align-middle">{{ index+1 }}</td>
 
             <td class="align-middle">
                 <label class="sr-only">Location Name</label>

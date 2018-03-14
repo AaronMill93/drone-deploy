@@ -15492,6 +15492,16 @@ $("#menu-toggle").click(function (e) {
   $("#wrapper").toggleClass("toggled");
 });
 
+window.onload = function () {
+  var chart2 = document.getElementById("bar-chart").getContext("2d");
+  window.myBar = new Chart(chart2).Bar(barChartData, {
+    responsive: true,
+    scaleLineColor: "rgba(0,0,0,.2)",
+    scaleGridLineColor: "rgba(0,0,0,.05)",
+    scaleFontColor: "#c5c7cc"
+  });
+};
+
 /**
  * Vue Components
  */
@@ -58505,7 +58515,7 @@ var render = function() {
                 staticClass:
                   "table__cell table__element center-content align-middle"
               },
-              [_vm._v(_vm._s(index))]
+              [_vm._v(_vm._s(index + 1))]
             ),
             _vm._v(" "),
             _c("td", { staticClass: "align-middle" }, [

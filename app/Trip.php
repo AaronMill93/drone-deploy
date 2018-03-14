@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
-    private $locations = array();
+    public $locations = array();
 
     public function __construct()
     {

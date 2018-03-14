@@ -17,13 +17,33 @@ class ScheduleController extends Controller
     }
 
     public function summary(Request $request) {
-        $drone = new Drone("Aarons drone", 124);
+
+        $droneDetails = Input::only('drone-name', 'drone-capacity');
+
+        //Initialize schedule and drone objects
+        $drone = new Drone($droneDetails['drone-name'], $droneDetails['drone-capacity']);
         $schedule = new Schedule($drone);
 
-        //loop through trip details
-        $etd = array();
-        $input = Input::all();
-        print_r($input);
-        //return $request->all();
+        $tripDetails = Input::except('drone-name', 'drone-capacity');
+
+        //sort trip details
+        $sortedTD = array();
+        $simpleTD = array_values($tripDetails);
+        for ($i = 1; $i < count($simpleTD); $i += 2) {
+            array_push($sortedTD, array($simpleTD[$i], $simpleTD[$i+1]));
+        }
+
+        //Loop through trip details, create location objects, add locations to schedule
+        foreach($sortedTD as $key => $value) {
+            $schedule->addLocation(new Location($value[0], $value[1]));
+        }
+
+        //Create optimal trips
+        $locations = $schedule->locations;
+        $weightLimit = $drone->maxWeight;
+        $schedule->createTrips($locations, $weightLimit);
+        
+        //Output to template
+        return view('schedule', ['trips' => $schedule->trips]);
     }
 }

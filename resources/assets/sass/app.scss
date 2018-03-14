@@ -133,6 +133,9 @@ p {
 .jumbotron {
 	padding: 3rem 2rem;
 	background-color: $almost-white;
+	table{
+		margin-bottom: 0;
+	}
 }
 
 // Override Primary Color
@@ -468,6 +471,23 @@ p {
 	}
 }
 
+@media screen and (max-width: 576px) {
+	#dropdownMenuLink{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+	}
+}
+
+@media screen and (min-width: 576px) {
+	#dropdownMenuLink{
+		display: flex;
+		align-items: center;
+		float: right;
+	}
+}
+
 .profile-photo {
 	border-radius: 499rem;
 	float: left;
@@ -653,6 +673,12 @@ p {
 	border: none!important;
 }
 
+.timeline-badge.primary:hover {
+	background-color: #6365d2 !important;
+	border-color: #6365d2 !important;
+	cursor: pointer;
+}
+
 .timeline-badge.success {
 	background-color: #8ad919 !important;
 }
@@ -667,6 +693,11 @@ p {
 
 .timeline-badge.info {
 	background-color: #30a5ff !important;
+}
+
+.timeline-body > ul > li {
+	color: $medium-gray;
+	font-size: .9rem;
 }
 
 // Latest News Widget

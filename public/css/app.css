@@ -133,6 +133,10 @@ p {
   background-color: #f7f7f7;
 }
 
+.jumbotron table {
+  margin-bottom: 0;
+}
+
 .btn-primary,
 .btn-primary.disabled,
 .btn-primary:disabled,
@@ -510,6 +514,32 @@ a.bg-primary:hover {
   width: 100%;
 }
 
+@media screen and (max-width: 576px) {
+  #dropdownMenuLink {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #dropdownMenuLink {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    float: right;
+  }
+}
+
 .profile-photo {
   border-radius: 499rem;
   float: left;
@@ -724,6 +754,12 @@ a.bg-primary:hover {
   border: none !important;
 }
 
+.timeline-badge.primary:hover {
+  background-color: #6365d2 !important;
+  border-color: #6365d2 !important;
+  cursor: pointer;
+}
+
 .timeline-badge.success {
   background-color: #8ad919 !important;
 }
@@ -738,6 +774,11 @@ a.bg-primary:hover {
 
 .timeline-badge.info {
   background-color: #30a5ff !important;
+}
+
+.timeline-body > ul > li {
+  color: #7c7c7c;
+  font-size: .9rem;
 }
 
 .article {
