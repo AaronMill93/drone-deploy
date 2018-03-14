@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Location extends Model
+class Location
 {
     public $name;
     public $packageWeight;

@@ -477,6 +477,11 @@ a.bg-primary:hover {
   padding-bottom: .5rem;
 }
 
+#drone-title {
+  font-weight: bold;
+  color: #444444;
+}
+
 .card-title-btn-container {
   position: absolute;
   top: 1.25rem;

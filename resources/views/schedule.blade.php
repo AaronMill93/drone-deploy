@@ -24,7 +24,7 @@
                         <img src="images/profile-pic.png" alt="profile photo" class="circle float-left profile-photo" width="80" height="auto">
                         
                         <div class="username mt-1">
-                            <h4 class="mb-1">Bluebell</h4>
+                            <h4 class="mb-1">Username</h4>
                             
                             <h6 class="text-muted">Super Admin</h6>
                         </div>
@@ -89,8 +89,9 @@
                                 <div class="card mb-4">
                                     <div class="card-block">
                                             <h3 class="card-title">Overview</h3>
-                                            <h6 class="card-subtitle mb-2 text-muted">Latest trips</h6>
-
+                                            @if(isset($trips))
+                                    <h6 class="card-subtitle mb-2 text-muted"><span id="drone-title">Drone: </span>{{$drone->name}}</h6>
+                                            @endif
                                             @if(isset($trips))
                                             <ul class="timeline">
                                                     @foreach ($trips as $counter => $trip) 
