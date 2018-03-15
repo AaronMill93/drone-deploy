@@ -33,7 +33,6 @@ class ScheduleController extends Controller
         for ($i = 1; $i < (count($simpleTD) - 1); $i += 2) {
             array_push($sortedTD, array('name' => $simpleTD[$i], 'packageWeight' => $simpleTD[$i+1]));
         }
-
         //Add locations to schedule
         $schedule->locations = $sortedTD;
 
@@ -41,7 +40,7 @@ class ScheduleController extends Controller
         $locations = $schedule->locations;
         $weightLimit = $drone->maxWeight;
         $schedule->createTrips($locations, $weightLimit);
-        
+
         //Output to template
         return view('schedule', ['drone' => $drone, 'trips' => $schedule->trips]);
     }
