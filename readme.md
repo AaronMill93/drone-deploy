@@ -1,5 +1,5 @@
+## [Demo](http://drone-deploy.aaronmill.com/)
 ## About Drone Deploy
-[Demo](http://drone-deploy.aaronmill.com/)
 Drone deploy is an app that allows you to plan for drone package deliveries. The goal is to optimize resources and provide you with tools to make managing your drones easier. 
 ## Current Features
 - User-friendly scheduling tools
