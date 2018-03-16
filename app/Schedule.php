@@ -25,9 +25,8 @@ class Schedule
     }
 
     /**
-     * Segments locations by package weight and creates trips recursively 
+     * Finds optimal number of trips, creates trips, adds them to schedule 
      */
-
     public function createTrips($locations, $weightLimit)
     {
         //find optimal number of trips
@@ -48,7 +47,7 @@ class Schedule
                 $tripWeight += $location['packageWeight'];
                 if($tripWeight <= $weightLimit) {
                     $trip->addLocationFromArray($location);
-                    unset($locations[$i]);
+                    unset($locations[$key]);
                 }
                 else{
                     //subtract from trip weight since it wasn't added
