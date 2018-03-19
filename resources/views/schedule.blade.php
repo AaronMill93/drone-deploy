@@ -43,26 +43,28 @@
                         <section class="row">
                             <div class="col-md-12 col-lg-6">
                                 <div class="jumbotron">                               
-                                    <h1 class="mb-4">Schedule Deployment</h1>                            
-                                    <p class="lead">Drone Details</p>
+                                    <h1 class="mb-4">Schedule Deployment</h1>    
+                                        <p class="lead">Drone Details</p>                        
                                     <form method="POST" action="/summary" class="form-inline">
                                         {{ csrf_field() }}
-                                        <label for="drone-name" class="sr-only">Drone Name</label>
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <div class="input-group-addon">Drone</div>
-                                            <input class="form-control" placeholder="Name" name="drone-name" type="text" id="drone-name">
-                                        </div>
+                                            <label for="drone-name" class="sr-only">Drone Name</label>
+                                            <div class="drone-details__group input-group mb-2 mr-lg-2">
+                                                <div class="input-group-addon">Drone</div>
+                                                <input class="form-control" placeholder="Name" name="drone-name" type="text" id="drone-name">
+                                            </div>
 
-                                        <label for="drone-capacity" class="sr-only">Drone Capacity</label>
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <input class="form-control" placeholder="Maximum Weight" name="drone-capacity" type="text" id="drone-capacity">
-                                            <div class="input-group-addon">kg</div>
-                                        </div>
+                                            <label for="drone-capacity" class="sr-only">Drone Capacity</label>
+                                            <div class="drone-details__group input-group mb-2 mr-lg-2">
+                                                <input class="form-control" placeholder="Maximum Weight" name="drone-capacity" type="text" id="drone-capacity">
+                                                <div class="input-group-addon">kg</div>
+                                            </div>
                                         <div class="divider" style="margin-top: 1rem;"></div>
                                         <p class="lead">Trip Details</p>
-                                        <deployment-table></deployment-table>
+                                        <div class="table-responsive">
+                                            <deployment-table></deployment-table>
+                                        </div>
                                         <div class="divider" style="margin-top: 0;"></div>
-                                        <p class="lead"><button class="btn btn-primary btn-lg mt-2" type="submit" role="button">Schedule</button></p>
+                                        <button class="btn btn-primary btn-lg mt-2" type="submit" role="button">Schedule</button>
                                     </form>                                        
                             </div>
                                 

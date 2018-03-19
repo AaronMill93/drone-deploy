@@ -230,6 +230,12 @@ p {
 
 // Custom Button Styles
 
+@media screen and (max-width: $deployment-widget) {
+	.btn {
+		width: 100%;
+	}
+}
+
 .btn {
 	border-radius: 499rem;
 	text-transform: uppercase;
@@ -392,7 +398,7 @@ p {
 	background-color: $primary-color-hover!important;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $screen-ss) {
 	#wrapper .sidebar-nav {
 		display: none;
 	}
@@ -411,7 +417,7 @@ p {
 		background-color: $primary-color-hover;
 	}
 }
-	@media screen and (min-width: 576px) {
+	@media screen and (min-width: $screen-ss) {
 	#wrapper.toggled .sidebar-nav {
 		display: block;
 	}
@@ -432,11 +438,6 @@ p {
 .card-subtitle {
 	margin-top: -.75rem;
 	padding-bottom: .5rem;
-}
-
-#drone-title{
-	font-weight: bold;
-    color: $dark-gray;
 }
 
 .card-title-btn-container {
@@ -476,7 +477,7 @@ p {
 	}
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $screen-ss) {
 	#dropdownMenuLink{
 		display: flex;
 		align-items: center;
@@ -485,7 +486,7 @@ p {
 	}
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: $screen-ss) {
 	#dropdownMenuLink{
 		display: flex;
 		align-items: center;
@@ -537,6 +538,18 @@ p {
 	height: .3rem;
 }
 
+// Deployment Widget
+
+#drone-title {
+	font-weight: bold;
+    color: $dark-gray;
+}
+
+.drone-details__group {
+	@media screen and (max-width: $deployment-widget) {
+		width: 100% !important;
+	}
+}
 
 // Calendar Widget
 

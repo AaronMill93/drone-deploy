@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-responsive table-striped">
+    <table class="table table-striped table-hover">
         <thead>
         <tr>
             <th>#</th>
@@ -18,16 +18,16 @@
 
             <td class="align-middle">
                 <label class="sr-only">Location Name</label>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                <div class="input-group mr-2">
                     <div class="input-group-addon"><em class="fa fa-map-marker"></em></div>
-                    <input class="table__input form-control" placeholder="Search Location" :name="`name-${index}`" type="text" v-model="row.name">
+                    <deployment-table-gmap-input v-model="row.name" :name="`name-${index}`"></deployment-table-gmap-input>
                 </div>
             </td>
 
             <td class="align-middle">
                 <label class="sr-only">Package Weight</label>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <input id="weight" class="table__input form-control" placeholder="Package Weight" :name="`weight-${index}`" type="text" v-model.number="row.weight">
+                <div class="input-group mr-2">
+                    <input class="table__input form-control" placeholder="Package Weight" :name="`weight-${index}`" type="text" v-model.number="row.weight">
                     <div class="input-group-addon">kg</div>
                 </div>
             </td>
@@ -39,10 +39,8 @@
             </td>
         </tr>
         <tr>
-            <td class="text-right" colspan="4">
-                <button type="button" class="table__element create-row btn btn-link" @click="addRow()">
-                    <em class="fa fa-plus"></em>
-                </button>
+            <td class="text-center" colspan="4" @click="addRow()">
+                <span class="table__element create-row">Add Row</span>   
             </td>
         </tr>
         </tbody>
@@ -98,6 +96,7 @@ export default {
             ]
         }
     },
+    props: ['name','weight'],
     methods: {
         calcRow(){
             if(this.rows.length > 1){

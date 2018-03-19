@@ -1,4 +1,51 @@
-//Variables
+/**
+ * Variable Overrides.
+ *
+ * Modify this file to override the Bootstrap Framework variables.
+ */
+
+/*===================================
+=            Breakpoints            =
+===================================*/
+
+// Small screen / tablet
+$screen-ss:                  576px;
+$screen-ss-min:              $screen-ss;
+$screen-mini-tablet:         $screen-ss-min;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / laptop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-laptop:              $screen-md-min;
+
+// Large screen / desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-desktop:             $screen-lg-min;
+
+// Large screen / large-desktop
+$screen-xlg:                  1920px;
+$screen-xlg-min:              $screen-xlg;
+$screen-lg-desktop:           $screen-xlg-min;
+
+// Schedule Deployment Widget
+$deployment-widget:                  1624px;            
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-ss-min - 1);
+$screen-ss-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xlg-min - 1);
+
+/*===================================
+=          Color Overrides          =
+===================================*/
 $primary-color: #7376df;
 $primary-color-hover: #6365d2;
 $almost-white: #f7f7f7;
@@ -6,7 +53,49 @@ $lighter-gray: #dfdfdf;
 $light-gray: #a0a0a0;
 $medium-gray: #7c7c7c;
 $dark-gray: #444444;
-$base-font-size: 16px;
+
+
+// button colours
+
+$margin-constant: 0.9375rem;
+
+/*====================================================================================
+=   Typography
+=====================================================================================*/
 $main-font: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headline-font: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$base-font-size:          16px;
+$font-size-xlarge:        ceil(($base-font-size * 1.35)); // ~22px
+$font-size-large:         ceil(($base-font-size * 1.25)); // ~18px
+$font-size-small:         ceil(($base-font-size * 0.85)); // ~14px
+$font-size-xsmall:        ceil(($base-font-size * 0.60)); // ~10px
+
+// Scale Factor 1.25 - http://www.gridlover.net/app/
+$font-size-h1:            48px;
+$font-size-h2:            40px;
+$font-size-h3:            35px;
+$font-size-h4:            29px;
+$font-size-h5:            24px;
+$font-size-h6:            21px;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429; // 20/14
+$line-height-computed:    floor(($base-font-size * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit;
+$headings-font-weight:    800;
+$headings-line-height:    1.1;
+$headings-color:          inherit;
+
+/*====================================================================================
+=   Section Dividers
+=====================================================================================*/
+
+$wrapper-padding:         1rem;
+$wrapper-padding-sm:      ceil(($wrapper-padding / 2));
+$wrapper-padding-md:      ceil(($wrapper-padding * 2));
+$wrapper-padding-lg:      ceil(($wrapper-padding * 3));
+$wrapper-padding-xlg:     ceil(($wrapper-padding * 4));
 

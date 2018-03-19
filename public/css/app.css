@@ -1,4 +1,26 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i);body {
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i);/**
+ * Variable Overrides.
+ *
+ * Modify this file to override the Bootstrap Framework variables.
+ */
+
+/*===================================
+=            Breakpoints            =
+===================================*/
+
+/*===================================
+=          Color Overrides          =
+===================================*/
+
+/*====================================================================================
+=   Typography
+=====================================================================================*/
+
+/*====================================================================================
+=   Section Dividers
+=====================================================================================*/
+
+body {
   background-color: #ffffff;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -262,6 +284,12 @@ a.bg-primary:hover {
   color: #fff;
 }
 
+@media screen and (max-width: 1624px) {
+  .btn {
+    width: 100%;
+  }
+}
+
 .btn {
   border-radius: 499rem;
   text-transform: uppercase;
@@ -477,11 +505,6 @@ a.bg-primary:hover {
   padding-bottom: .5rem;
 }
 
-#drone-title {
-  font-weight: bold;
-  color: #444444;
-}
-
 .card-title-btn-container {
   position: absolute;
   top: 1.25rem;
@@ -592,6 +615,17 @@ a.bg-primary:hover {
 
 .progress-bar {
   height: .3rem;
+}
+
+#drone-title {
+  font-weight: bold;
+  color: #444444;
+}
+
+@media screen and (max-width: 1624px) {
+  .drone-details__group {
+    width: 100% !important;
+  }
 }
 
 #calendar,
