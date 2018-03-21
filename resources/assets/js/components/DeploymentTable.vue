@@ -38,9 +38,14 @@
                 </button>
             </td>
         </tr>
-        <tr>
-            <td class="text-center" colspan="4" @click="addRow()">
-                <span class="table__element create-row">Add Row</span>   
+        <tr class="table__element create-row" @click="addRow()">
+            <td>
+            </td>
+            <td class="text-center" colspan="2">
+                <span>Add Row</span>  
+            </td>
+            <td class="align-middle">
+                <em class="fa fa-plus"></em> 
             </td>
         </tr>
         </tbody>
@@ -64,7 +69,7 @@ $font-medium: 1.2rem;
 
 .table__input{
     //usable on mobile
-    min-width: 10em;
+    min-width: 10rem;
 }
 
 //table controls
@@ -72,13 +77,20 @@ $font-medium: 1.2rem;
     font-size: $font-medium;
     color: $dark-gray;
     &.delete-row{
-        .fa:hover {
+        .fa:hover{
             color: #ef4040;
         }
     }
+    &.delete-row:disabled{
+        .fa:hover{
+            color: #636c72;
+        }
+    }
     &.create-row{
-        .fa:hover {
-            color: #8ad919;
+        cursor: pointer;
+        .fa{
+            padding-right: 1.25rem;
+            padding-left: 1.25rem;
         }
     }
 }

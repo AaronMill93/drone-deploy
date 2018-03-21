@@ -41086,7 +41086,7 @@ exports = module.exports = __webpack_require__(54)(false);
 
 
 // module
-exports.push([module.i, "\n.table__cell.center-content[data-v-158f62a2] {\n  text-align: center;\n}\n.table__input[data-v-158f62a2] {\n  min-width: 10em;\n}\n.table__element[data-v-158f62a2] {\n  font-size: 1.2rem;\n  color: #444444;\n}\n.table__element.delete-row .fa[data-v-158f62a2]:hover {\n    color: #ef4040;\n}\n.table__element.create-row .fa[data-v-158f62a2]:hover {\n    color: #8ad919;\n}\n", ""]);
+exports.push([module.i, "\n.table__cell.center-content[data-v-158f62a2] {\n  text-align: center;\n}\n.table__input[data-v-158f62a2] {\n  min-width: 10rem;\n}\n.table__element[data-v-158f62a2] {\n  font-size: 1.2rem;\n  color: #444444;\n}\n.table__element.delete-row .fa[data-v-158f62a2]:hover {\n    color: #ef4040;\n}\n.table__element.delete-row:disabled .fa[data-v-158f62a2]:hover {\n    color: #636c72;\n}\n.table__element.create-row[data-v-158f62a2] {\n    cursor: pointer;\n}\n.table__element.create-row .fa[data-v-158f62a2] {\n      padding-right: 1.25rem;\n      padding-left: 1.25rem;\n}\n", ""]);
 
 // exports
 
@@ -41097,6 +41097,18 @@ exports.push([module.i, "\n.table__cell.center-content[data-v-158f62a2] {\n  tex
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -41325,25 +41337,18 @@ var render = function() {
           ])
         }),
         _vm._v(" "),
-        _c("tr", [
-          _c(
-            "td",
-            {
-              staticClass: "text-center",
-              attrs: { colspan: "4" },
-              on: {
-                click: function($event) {
-                  _vm.addRow()
-                }
+        _c(
+          "tr",
+          {
+            staticClass: "table__element create-row",
+            on: {
+              click: function($event) {
+                _vm.addRow()
               }
-            },
-            [
-              _c("span", { staticClass: "table__element create-row" }, [
-                _vm._v("Add Row")
-              ])
-            ]
-          )
-        ])
+            }
+          },
+          [_c("td"), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)]
+        )
       ],
       2
     )
@@ -41372,6 +41377,22 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-addon" }, [
       _c("em", { staticClass: "fa fa-map-marker" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center", attrs: { colspan: "2" } }, [
+      _c("span", [_vm._v("Add Row")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "align-middle" }, [
+      _c("em", { staticClass: "fa fa-plus" })
     ])
   }
 ]
@@ -41442,8 +41463,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// Import google maps EventBus
-
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {};
@@ -41454,11 +41473,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.place = place;
         }
     }
-
-    //Create the search box and link it to the UI element.
-    // var input = document.getElementById('pac-input');
-    // var searchBox = googleMapsClient.places.SearchBox(input);
-
 });
 
 /***/ }),
